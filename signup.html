@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- ------------------------------------====================================SIGNUP PAGE====================================----------------- -->
+    <!-- ---------------------------- BACKWARD ARROW -->
+    <div class="container flex flex-col mx-auto">
+      <div id="arrowSignupId" class="w-full px-4 py-4">
+        <svg
+          width="16"
+          height="14"
+          viewBox="0 0 16 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M15.9998 7.00029C15.9998 7.2655 15.8945 7.51986 15.7069 7.70739C15.5194 7.89493 15.2651 8.00029 14.9998 8.00029H3.41383L7.70783 12.2923C7.80081 12.3853 7.87456 12.4956 7.92488 12.6171C7.9752 12.7386 8.0011 12.8688 8.0011 13.0003C8.0011 13.1318 7.9752 13.262 7.92488 13.3835C7.87456 13.5049 7.80081 13.6153 7.70783 13.7083C7.61486 13.8013 7.50448 13.875 7.383 13.9253C7.26152 13.9757 7.13132 14.0015 6.99983 14.0015C6.86835 14.0015 6.73815 13.9757 6.61667 13.9253C6.49519 13.875 6.38481 13.8013 6.29183 13.7083L0.291834 7.70829C0.198708 7.6154 0.124822 7.50504 0.074409 7.38355C0.0239961 7.26206 -0.00195313 7.13182 -0.00195312 7.00029C-0.00195313 6.86875 0.0239961 6.73851 0.074409 6.61702C0.124822 6.49553 0.198708 6.38518 0.291834 6.29229L6.29183 0.292287C6.47961 0.104514 6.73428 -0.000976562 6.99983 -0.000976562C7.26539 -0.000976562 7.52006 0.104514 7.70783 0.292287C7.89561 0.48006 8.0011 0.734735 8.0011 1.00029C8.0011 1.26584 7.89561 1.52051 7.70783 1.70829L3.41383 6.00029H14.9998C15.2651 6.00029 15.5194 6.10564 15.7069 6.29318C15.8945 6.48072 15.9998 6.73507 15.9998 7.00029Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+      <!-- -----------------------------------S LOGO  -->
+      <div class="w-full mt-[30%] flex justify-center mx-auto">
+        <svg
+          width="54"
+          height="81"
+          viewBox="0 0 54 81"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.23355 17.7415C22.2531 10.4389 33.6453 3.542 39.7482 0.499261C44.834 -2.54348 47.1042 9.00132 42.7997 16.7273C38.4952 24.4532 26.5252 28.8982 26.5252 28.8982C26.5252 28.8982 52.9712 22.8128 53.9884 46.1404C54.2537 52.2259 49.9198 59.3256 46.8683 61.3541C43.8168 63.3826 17.3708 79.1034 14.3194 80.6248C10.7425 82.4081 9.23359 77.582 9.23359 71.4965C9.23359 57.2971 25.5081 52.2259 25.5081 52.2259C11.2679 54.2544 2.1135 49.1832 0.0791923 33.9695C-0.598903 28.8982 3.13068 21.1646 9.23355 17.7415Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+      <!-- ------------------------------ SIGNUP TEXT -->
+      <div
+        class="w-full font-semibold text-2xl mt-[118px] flex justify-center items-cente px-2 mx-auto"
+      >
+        <p>Signup to your Account</p>
+      </div>
+    </div>
+    <!-- --------------------------------------FORM------------------------------------- -->
+    <form id="signup-form">
+      <!--    ------------------------------------INPUT DIV -->
+      <div class="w-full px-8 mt-10 flex flex-col gap-4 mx-auto">
+        <div class="w-full relative">
+          <input
+            name="username"
+            class="w-full bg-slate-100 rounded[4px] h-[37px] px-5 border-0"
+            type="text"
+            placeholder="Username"
+          /><svg
+            class="absolute top-[10px]"
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="16"
+              height="16"
+              transform="translate(0 0.5)"
+              fill="white"
+              fill-opacity="0.01"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1.04375 4.61063C1.13197 4.22409 1.34882 3.87896 1.65881 3.63177C1.96879 3.38458 2.35352 3.24997 2.75 3.25H13.25C13.6465 3.24997 14.0312 3.38458 14.3412 3.63177C14.6512 3.87896 14.868 4.22409 14.9563 4.61063L8 8.86225L1.04375 4.61063ZM1 5.60987V11.8259L6.07762 8.71263L1 5.60987ZM6.91587 9.22625L1.16713 12.7499C1.30916 13.0494 1.53334 13.3024 1.81356 13.4794C2.09378 13.6565 2.41853 13.7503 2.75 13.75H13.25C13.5814 13.7501 13.906 13.656 14.1861 13.4788C14.4662 13.3016 14.6902 13.0485 14.832 12.749L9.08325 9.22538L8 9.88775L6.91587 9.22538V9.22625ZM9.92237 8.7135L15 11.8259V5.60987L9.92237 8.71263V8.7135Z"
+              fill="#6C757D"
+            />
+          </svg>
+        </div>
+        <div class="w-full relative">
+          <input
+            name="password"
+            class="w-full bg-slate-100 rounded[4px] h-[37px] px-5 border-0"
+            type="password"
+            placeholder="Password"
+            id="password-input"
+          />
+          <svg
+            class="absolute top-[10px]"
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="16"
+              height="16"
+              transform="translate(0 0.5)"
+              fill="white"
+              fill-opacity="0.01"
+            />
+            <g clip-path="url(#clip0_1_2552)">
+              <path
+                d="M3.1875 9.375C3.1875 8.91087 3.37187 8.46575 3.70006 8.13756C4.02825 7.80937 4.47337 7.625 4.9375 7.625H11.0625C11.5266 7.625 11.9717 7.80937 12.2999 8.13756C12.6281 8.46575 12.8125 8.91087 12.8125 9.375V13.75C12.8125 14.2141 12.6281 14.6592 12.2999 14.9874C11.9717 15.3156 11.5266 15.5 11.0625 15.5H4.9375C4.47337 15.5 4.02825 15.3156 3.70006 14.9874C3.37187 14.6592 3.1875 14.2141 3.1875 13.75V9.375Z"
+                fill="#6C757D"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M4.9375 5C4.9375 4.18777 5.26016 3.40882 5.83449 2.83449C6.40882 2.26016 7.18777 1.9375 8 1.9375C8.81223 1.9375 9.59118 2.26016 10.1655 2.83449C10.7398 3.40882 11.0625 4.18777 11.0625 5V7.625H10.1875V5C10.1875 4.41984 9.95703 3.86344 9.5468 3.4532C9.13656 3.04297 8.58016 2.8125 8 2.8125C7.41984 2.8125 6.86344 3.04297 6.4532 3.4532C6.04297 3.86344 5.8125 4.41984 5.8125 5V7.625H4.9375V5Z"
+                fill="#6C757D"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_2552">
+                <rect
+                  width="14"
+                  height="14"
+                  fill="white"
+                  transform="translate(1 1.5)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg
+            class="absolute top-[10px] right-3 cursor-pointer"
+            id="password-toggle"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"
+              fill="#6C757D"
+            />
+          </svg>
+        </div>
+      </div>
+      <!-- ----------------------------------------LOGIN LINK -->
+      <div class="w-full flex justify-center">
+        <a class="mt-[20px]" href="/">Login</a>
+      </div>
+      <!-- ----------------------------------------SIGNUP  BUTTON -->
+      <div class="w-full mx-auto flex justify-center mt-[60%]">
+        <button
+          type="submit"
+          class="w-[90%] h-[47px] rounded-[30px] border bg-black text-white hover:bg-slate-400"
+        >
+          Signup
+        </button>
+      </div>
+    </form>
+    <script type="module" src="/src/main.ts"></script>
+    <script defer type="module" src="/scripts/signup.ts"></script>
+    <script defer type="module" src="/scripts/dashboard.ts"></script>
+  </body>
+</html>
