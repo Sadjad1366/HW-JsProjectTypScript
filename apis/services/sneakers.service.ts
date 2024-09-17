@@ -1,12 +1,6 @@
 import { httpClient } from "../client";
 import { urls } from "../urls";
-
-interface GetProductsResponse{
-  "total": number,
-  "totalPages": number,
-  "page": number,
-  "perPage": number,
-  "data": [
+ interface IDataProducts
     {
       "id": number,
       "pid": number,
@@ -18,8 +12,14 @@ interface GetProductsResponse{
       "category": string,
       "gender": string,
       "brand": string
-    },
-  ]
+    }
+
+interface GetProductsResponse{
+  "total": number,
+  "totalPages": number,
+  "page": number,
+  "perPage": number,
+"data" : IDataProducts[],
 }
 
 // interface BrandsResponse{
@@ -41,7 +41,9 @@ export async function getBrandsRequest():Promise<string[]> {
   return response.data as string[];
 }
 
-export async function getProductsItemRequest(id:string) {
+export async function getProductsItemRequest(id:string):Promise<IDataProducts> {
   const response = await httpClient().get(`${urls.sneaker.detail}${id}`);
-  return response.data;
+  console.log(response);
+
+  return response.data as IDataProducts;
 }

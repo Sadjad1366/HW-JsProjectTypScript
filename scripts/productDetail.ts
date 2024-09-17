@@ -5,16 +5,21 @@ import {
 } from "../apis/services/sneakers.service";
 
 //============================================= variables ===================================
-let productDiv = document.getElementById("allProductsId");
-let count = 0;
-let totalPrice = 0;
-const id = new URLSearchParams(window.location.search).get("id");
-// console.log("id",id);
+let productDiv = document.getElementById("allProductsId") as HTMLDivElement;
+const icon = document.getElementById("iconId") as HTMLDivElement
+let count:number = 0;
+let totalPrice:number = 0;
+const id:string| null = new URLSearchParams(window.location.search).get("id");
+console.log("id",typeof id);
 
 
-  const response = await getProductsItemRequest(id);
-const size = response.sizes.split("|");
-const color = await response.colors.split("|");
+const response = await getProductsItemRequest(id);
+
+const size:string[] = response.sizes.split("|")
+
+const color =  response.colors.split("|");
+console.log(color);
+
 const productContainer = document.getElementById("productDetailContainerId") as HTMLDivElement
 
 // console.log(color);
@@ -111,8 +116,8 @@ productContainer.innerHTML = `
         <div class="w-full px-5 overflow-y-scroll no-scrollbar">
           <h2 class="font-semibold text-[22px] px-3">Color</h2>
           <div id="colorDivId" class="w-full colors flex p-0">
-            <div
-              class="w-full h-[42px] px-2 mx-1 my-3 font-normal bg-[${color[0]}] border border-black rounded-full flex justify-between items-center"
+            <div style="background-color:${color[0]}"
+              class="w-full h-[42px] px-2 mx-1 my-3 font-normal border border-black rounded-full flex justify-between items-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,17 +134,17 @@ productContainer.innerHTML = `
                 />
               </svg>
             </div>
-            <div
-              class="w-full h-[42px] px-5 mx-1 my-3 font-normal bg-[${color[1]}] border border-black rounded-full flex justify-center items-center"
+            <div style="background-color:${color[1]}"
+              class="w-full h-[42px] px-5 mx-1 my-3 font-normal border border-black rounded-full flex justify-center items-center"
             ></div>
-            <div
-              class="w-full h-[42px] px-5 mx-1 my-3 font-normal bg-[${color[2]}] border border-black  rounded-full flex justify-center items-center"
+            <div style="background-color:${color[2]}"
+              class="w-full h-[42px] px-5 mx-1 my-3 font-normal border border-black  rounded-full flex justify-center items-center"
             ></div>
-            <div
-              class="w-full h-[42px] px-5 mx-1 my-3 font-normal bg-[${color[3]}] border border-black rounded-full flex justify-center items-center"
+            <div style="background-color:${color[3]}"
+              class="w-full h-[42px] px-5 mx-1 my-3 font-normal border border-black rounded-full flex justify-center items-center"
             ></div>
-            <div
-              class="w-full h-[42px] px-5 mx-1 my-3 font-normal bg-[${color[4]}] border border-black rounded-full flex justify-center items-center"
+            <div style="background-color:${color[4]}"
+              class="w-full h-[42px] px-5 mx-1 my-3 font-normal border border-black rounded-full flex justify-center items-center"
             ></div>
           </div>
         </div>
@@ -191,14 +196,14 @@ productContainer.innerHTML = `
 //================================================================== PLUS & MINUS FUNCTIONS ==============================================
 //==============================   plus ==========================
 function plusFunc() {
-  let quantityInput = document.getElementById("countInputId");
-  let price = document.getElementById("priceId");
+  let quantityInput = document.getElementById("countInputId") as HTMLInputElement;
+  let price = document.getElementById("priceId")  as HTMLElement;
 
-  const plusBtn: = document.querySelector(".plus");
+  const plusBtn = document.querySelector(".plus") as HTMLElement;
   plusBtn.addEventListener("click", function (event) {
     count++;
-    quantityInput.value = count;
-    totalPrice = (quantityInput.value) *(response.price);
+    quantityInput.value = String(count);
+    totalPrice = count * response.price;;
     price.innerHTML = `$${totalPrice}`;
     console.log(totalPrice);
   });
@@ -206,14 +211,15 @@ function plusFunc() {
 
 //============================================ minus =============================
 function minusFunc() {
-  let quantityInput = document.getElementById("countInputId");
-  let price = document.getElementById("priceId");
-  const minusBtn = document.querySelector(".minus");
+  let quantityInput = document.getElementById("countInputId")as HTMLInputElement;
+  let price = document.getElementById("priceId") as HTMLElement;
+  const minusBtn = document.querySelector(".minus") as HTMLElement;
+
   minusBtn.addEventListener("click", function (event) {
-    if (quantityInput.value > 0) {
+    if (Number(quantityInput.value) > 0) {
       count--;
-      quantityInput.value = count;
-      totalPrice = quantityInput.value * response.price;
+      quantityInput.value = String(count);
+      totalPrice = count * response.price;
       price.innerHTML = `$${totalPrice}`;
       console.log(totalPrice);
     }
@@ -257,5 +263,7 @@ colorClickChanger();
 // =============================================================== BACKWARD ARROW HANDLER ===========================================================
 
 document.getElementById("iconId").addEventListener("click",function(){
+  // console.log("ok");
+
   window.location.href="/home"
 })
