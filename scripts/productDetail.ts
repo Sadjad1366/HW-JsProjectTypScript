@@ -5,12 +5,12 @@ import {
 } from "../apis/services/sneakers.service";
 
 //============================================= variables ===================================
-let productDiv = document.getElementById("allProductsId") as HTMLDivElement;
+const productDiv = document.getElementById("allProductsId") as HTMLDivElement;
 const icon = document.getElementById("iconId") as HTMLDivElement
 let count:number = 0;
 let totalPrice:number = 0;
 const id:string| null = new URLSearchParams(window.location.search).get("id");
-console.log("id",typeof id);
+// console.log("id",typeof id);
 
 
 const response = await getProductsItemRequest(id);
